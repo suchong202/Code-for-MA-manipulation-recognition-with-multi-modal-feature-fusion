@@ -1,0 +1,17 @@
+In this project, we constructed a classification experiment for tactile and vision data from Traditional Chinese Medical (TCM) MA manipulation. This folder contains the piezoelectric signal data (RFTR.xls, RDTR.xls, RFLT.xls, and RDLT.xls) of four acupuncture techniques (reinforcing by twirling and rotating (RFTR), reducing by twirling and rotating (RDTR), reinforcing by lifting and thrusting (RFLT), and reducing by lifting and thrusting (RDLT)) acquired by the tactile array finger-cot and videos corresponding to these data, as well as the MA manipulation. classification procedure (Codes) based on the multimodal fusion. 
+The piezoelectric signal sequences are derived from the tactile array finger cot worn by 20 acupuncturists at three institutions: the Institute of Acupuncture and Moxibustion of the Chinese Academy of Traditional Chinese Medicine (with 7 acupuncturists), the Dongzhimen Hospital of Beijing University of Traditional Chinese Medicine (with 7 acupuncturists), and the Zhongguancun Hospital of Beijing (with 6 acupuncturists). During data acquisition, the acupuncturist was required to wear the TFAC sensor on his/her right index finger during the MA manipulation operations. In particular, each type of MA manipulation was performed for one minute.
+The signals collected by the TAFC were digitized at a sampling rate of 20 kHz. Each MA manipulation was required to be performed for one minute. 
+In addition, a binocular camera was used to acquire the video data while physicians perform MA techniques. First, we fixed the stream size of the binocular camera at 720×1080 with a sampling rate of 60 frames per second.
+
+
+
+Step 1: Process the data and convert the video and haptic data into image data.
+In the data project:
+1. run videotopicture.py to convert video to picture.
+2. Run csvtopicture1.py to convert the csv file with the haptic voltage data into a line graph.
+3. Run csvtopicture2.py to convert the csv file with tactile angle data to line graph.
+Step 2: Train the vgg neural network.
+In the classification-pytorch-main project:
+1. Store the images of the three types of data in the test folder and the train folder under the datasets folder according to the type of technique. Run the txt_annotation file and store the paths of the training and test data in the files cls_train.txt and cls_test.txt, respectively. The visual data paths are stored in cls_train.txt and cls_test.txt, the haptic voltage data paths are stored in cls_train2.txt and cls_test2.txt, and the haptic test data are stored in cls_train3.txt and cls_test3.txt.
+2. Run train.py for neural network training.
+3. Run test.py to test the training effect.
