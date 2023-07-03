@@ -1,1 +1,1 @@
-# code_for_Biomedical Signal Processing and Control
+# Code for MA manipulation recognition with multi modal feature fusion
